@@ -1,37 +1,66 @@
-body {
-    font-family: 'Georgia', serif;
-    color: #000000;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Reset e corpo */
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #8b8888;
+    font-family: 'Poppins', sans-serif;
+    background: #121212;
+    color: #e0e0e0;
 }
 
+/* Fundo decorativo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 20%, #2c2c2c55, transparent 70%),
+                radial-gradient(circle at 70% 80%, #4444ff33, transparent 70%);
+    z-index: 0;
+}
+
+/* Estrutura */
 .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    position: relative;
+    z-index: 1; /* conteúdo acima do fundo */
+    padding: 40px 20px;
 }
 
+/* Cabeçalho */
 header {
-    background-color: #1e1f1e;
-    color: white;
+    background: linear-gradient(90deg, #1b1b1b, #2c2c2c);
+    color: #f1f1f1;
     padding: 20px;
     text-align: center;
-}
-
-.p1texto {
-    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .nome {
     font-size: 2.5em;
-    font-weight: bold;
-    font-family: 'Georgia', serif;
+    font-weight: 600;
     margin: 0;
+    letter-spacing: 1px;
 }
 
-.menu {
+.p1texto {
+    font-weight: 300;
+    font-size: 1.2em;
     margin-top: 10px;
+    color: #cfcfcf;
+}
+
+/* Menu */
+.menu {
+    margin-top: 15px;
+    text-align: center;
 }
 
 .menu ul {
@@ -41,92 +70,155 @@ header {
 }
 
 .menu li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 18px;
 }
 
 .menu a {
-    color: white;
+    color: #f1f1f1;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.1em;
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
-    text-decoration: underline;
+    background-color: #4444ff22;
+    transform: scale(1.05);
 }
 
+/* Container principal */
 .container {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 20px;
-    margin: 20px;
-}
-
-.caixa {
-    width: 800px;
-    height: auto;
-    border: 2px solid #1e1f1e;
-    overflow: hidden;
-    display: flex;
-    justify-content: flex-start;
     align-items: flex-start;
-    background-color: #c9c6c6;
-    border-radius: 15px;
-    padding: 20px;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
 }
 
+/* Caixa central menor e elegante */
+.caixa {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+    border-radius: 22px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 750px;
+    max-width: 100%;
+    padding: 25px;
+}
+
+.caixa:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.7);
+}
+
+/* Foto + texto */
 .quemsoeu {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-start;
 }
 
 .eufoto {
-    width: 150px;
+    width: 180px;
     height: auto;
-    margin-right: 20px;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    margin-top: 95px;
+    border-radius: 14px;
+    margin: 15px;
+    box-shadow: 0 5px 14px rgba(0,0,0,0.6);
+    border: 2px solid #5555ff;
 }
 
 .info {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
+    flex: 1;
+    padding: 15px;
 }
 
 .titulo {
-    text-align: left;
     font-size: 2em;
-    margin: 0 0 10px 0;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #ffcc66;
+    border-bottom: 2px solid #5555ff;
+    padding-bottom: 6px;
 }
 
 .textoq {
-    margin-top: 0;
-    padding: 20px;
-    background-color: #e0e0e0;
-    border-radius: 10px;
-    font-size: 1.2em;
+    font-size: 1em;
+    line-height: 1.6;
+    font-weight: 300;
+    background-color: #2e2e2e;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: inset 0 3px 8px rgba(0,0,0,0.3);
 }
 
+/* Rodapé */
 footer {
-    background-color: #1e1f1e;
-    color: white;
+    background: linear-gradient(90deg, #1b1b1b, #2c2c2c);
+    color: #f1f1f1;
     text-align: center;
-    padding: 10px;
-    margin-top: auto;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
+    padding: 14px 10px;
+    margin-top: 40px;
+    font-weight: 300;
+    border-radius: 15px;
+    box-shadow: 0 -5px 18px rgba(0,0,0,0.5);
 }
 
 .footer-link {
-    color: white;
+    color: #f1f1f1;
     text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 .footer-link:hover {
+    color: #ffcc66;
     text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 950px) {
+    .caixa {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .eufoto {
+        width: 150px;
+        margin: 0 0 20px 0;
+    }
+
+    .info {
+        padding: 12px;
+    }
+
+    .titulo {
+        font-size: 1.8em;
+        text-align: center;
+    }
+
+    .textoq {
+        font-size: 0.95em;
+        padding: 14px;
+    }
+}
+
+@media (max-width: 500px) {
+    .menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .titulo {
+        font-size: 1.6em;
+    }
 }

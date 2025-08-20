@@ -1,17 +1,16 @@
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Georgia', serif;
-    color: #000000;
-    background-color: #8b8888;
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #e0e0e0;
+    background: #121212;
     display: flex;
     flex-direction: column;
 }
@@ -20,45 +19,79 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    position: relative;
+    z-index: 1;
+    padding: 40px 20px;
 }
 
+/* Fundo decorativo */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 25% 25%, #2c2c2c55, transparent 70%),
+                radial-gradient(circle at 75% 75%, #4444ff33, transparent 70%);
+    z-index: 0;
+}
+
+/* Cabeçalho */
 header {
-    background-color: #1e1f1e;
-    color: white;
-    padding: 20px;
+    background: linear-gradient(90deg, #1b1b1b, #2c2c2c);
+    color: #f1f1f1;
+    padding: 25px 20px;
     text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
 .nome {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 0;
+    font-size: 2.3em;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
-.menu {
+.p1texto {
+    font-weight: 300;
+    font-size: 1.1em;
     margin-top: 10px;
+    color: #cfcfcf;
+}
+
+/* Menu */
+.menu {
+    margin-top: 12px;
+    text-align: center;
 }
 
 .menu ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .menu li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 18px;
 }
 
 .menu a {
-    color: white;
+    color: #f1f1f1;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.05em;
+    font-weight: 400;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
 }
 
 .menu a:hover {
-    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* Conteúdo principal */
 .container {
     flex: 1;
     display: flex;
@@ -73,56 +106,76 @@ header {
     width: 100%;
     max-width: 1200px;
     margin-bottom: 20px;
+    align-items: stretch;
 }
 
 .foto-curriculo {
-    flex: 0 0 200px;
+    flex: 0 0 300px;
+    display: flex;
 }
 
 .curriculo-img {
-    width: 200%;
-    height: auto;
-    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px; /* bordas suaves, sem cortar a imagem */
+    background-color: #000;
 }
 
 .caixa {
     flex: 1;
-    max-width: 600px;
-    border: 2px solid #1e1f1e;
-    background-color: #f0f0f0;
-    border-radius: 10px;
+    max-width: calc(100% - 320px);
+    border-radius: 22px;
+    background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
     padding: 20px;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
+.caixa:hover {
+    transform: translateY(-5px);
+}
+
+/* Texto */
 .titulo {
     font-size: 1.8em;
     margin-bottom: 10px;
+    color: #ffcc66;
 }
 
 .textoq {
     margin: 0;
     padding: 10px 0;
+    color: #e0e0e0;
 }
 
+/* Rodapé */
 footer {
-    background-color: #1e1f1e;
-    color: white;
+    background: linear-gradient(90deg, #1b1b1b, #2c2c2c);
+    color: #f1f1f1;
     text-align: center;
-    padding: 10px;
-    width: 100%;
-    margin-top: auto;
+    padding: 18px 10px;
+    margin-top: 60px;
+    border-radius: 15px;
+    box-shadow: 0 -5px 18px rgba(0,0,0,0.5);
+    font-weight: 300;
 }
 
 .footer-link {
-    color: white;
+    color: #f1f1f1;
     text-decoration: none;
+    font-weight: 400;
+    transition: all 0.3s ease;
 }
 
 .footer-link:hover {
-    text-decoration: underline;
+    color: #ffcc66;
 }
 
+/* Responsividade */
 @media (max-width: 1100px) {
     .espaco-dividido {
         flex-direction: column;
