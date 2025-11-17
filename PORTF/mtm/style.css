@@ -110,14 +110,13 @@ header {
     background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
     border-radius: 22px;
     overflow: hidden;
-    box-shadow: 0 10px 28px rgba(0,0,0,0.6);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    align-items: center;
 }
 
 .caixa:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 14px 40px rgba(0,0,0,0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.6);
 }
 
 /* Imagem da caixa com bordas suavemente arredondadas */
@@ -126,8 +125,7 @@ header {
     height: auto;
     object-fit: contain; /* mantém a imagem inteira */
     background-color: #000;
-    border-radius: 12px; /* bordas arredondadas sem cortar a imagem */
-    /* sombra removida */
+    border-radius: 12px; /* arredondamento suave das bordas */
 }
 
 /* Texto da caixa */
@@ -158,18 +156,17 @@ footer {
     background: linear-gradient(90deg, #1b1b1b, #2c2c2c);
     color: #f1f1f1;
     text-align: center;
-    padding: 18px 10px;
-    margin-top: 60px;
+    padding: 12px;
+    margin-top: auto;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.4);
     font-weight: 300;
-    border-radius: 15px;
-    box-shadow: 0 -5px 18px rgba(0,0,0,0.5);
 }
 
 .footer-link {
     color: #f1f1f1;
     text-decoration: none;
     font-weight: 400;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .footer-link:hover {
@@ -183,7 +180,6 @@ footer {
         align-items: center;
         flex: 1 1 100%;
         max-width: 100%;
-        padding: 25px;
     }
 
     .caixa img {
@@ -195,7 +191,6 @@ footer {
 
     .descricao {
         width: 100%;
-        text-align: center;
     }
 
     .descricao h2,
@@ -204,6 +199,6 @@ footer {
     }
 }
 
-.atv {
+.atv{
     color: #ffcc66;
 }
